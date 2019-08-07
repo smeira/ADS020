@@ -5,10 +5,21 @@
  */
 package modelo;
 
+import java.util.List;
+import modelo.persistencia.DadosException;
+
 /**
  *
  * @author 18114290023
  */
-public class BO {
+public interface BO<T> {
+    
+    List<T> listar() throws NegocioException;
+    void validar(T entidade) throws NegocioException;
+    void incluir (T entidade) throws NegocioException;
+    void alterar(T entidade) throws NegocioException;
+    void excluir (T entidade) throws NegocioException;
+    
+    T consultar(T entidade) throws NegocioException;
     
 }
