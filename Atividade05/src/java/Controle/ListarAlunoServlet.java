@@ -57,38 +57,33 @@ public class ListarAlunoServlet extends HttpServlet {
         out.print("<!DOCTYPE html>");
         out.print("<html>");
         out.print("<head>");
-        out.print("< title > Cadastro de Alunos </title>");
-        out.print("< / head>");
-        out.print("<body>");
-        out.print("< h1 > Listagem de Alunos</h1>");
-        
+        out.print("<title> Cadastro de Alunos </title>");
+        out.print("</head>");
+        out.print("<body>");               
         out.println("<h1>Listagem de Alunos</h1>");
         out.println("<a href='" + response.encodeURL("/aluno/incluir") + "'>Incluir</a>");
-        out.println("<table>");
-        
-        out.print("<table>");
-
-        out.println("</tr>");
+        out.println("<table>");                
+              
+        out.print("<tr>");
+        out.print("<th>Matrícula</th>");
+        out.print("<th>Nome</th>");
+        out.print("<th>Ações</th>");
+        out.print("</tr>");
 
         for (Aluno aluno : lista) {
             out.println("<tr>");
             out.println("<td>" + aluno.getMatricula() + "</td>");
             out.println("<td>" + aluno.getMatricula() + "</td>");
-            out.println("<td><a href=''>Alterar</a>");
+            out.println("<td><a href='" + response.encodeURL("/atividade05/alterar?id=") + aluno.getId() + "'>Alterar</a>");
             out.println("<a href=''>Excluir</a></td>");
             out.println("</tr>");
         }
 
         out.println("</table>");
 
-        out.print("<tr>");
-        out.print("<th>Matrícula</th>");
-        out.print("<th>Nome</th>");
-        out.print("<th>Ações</th>");
-        out.print("< / tr >");
-        out.print("< / table>");
-        out.print("< / body>");
-        out.print("< / html >");
+        
+        out.print("</body>");
+        out.print("</html>");
     }
 
     /**
