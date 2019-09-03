@@ -69,12 +69,13 @@ public class ExcluirAlunoServlet extends HttpServlet {
         } catch (NegocioException e) {
             throw new ServletException("", e);
         }
+        
+        response.sendRedirect(request.getContextPath()+"/aluno");
     }
     
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        processRequest(request, response);
+    protected void doPost(HttpServletRequest request, HttpServletResponse response){
+            try{ throw new ServletException("Método não suportado"); }catch(ServletException e){ e.getMessage(); }
     }
 
     /**

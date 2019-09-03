@@ -65,7 +65,7 @@ public class ListarAlunoServlet extends HttpServlet {
         out.println("<table>");                
               
         out.print("<tr>");
-        out.print("<th>Matrícula</th>");
+        out.print("<th>Matricula</th>");
         out.print("<th>Nome</th>");
         out.print("<th>Ações</th>");
         out.print("</tr>");
@@ -74,7 +74,7 @@ public class ListarAlunoServlet extends HttpServlet {
             out.println("<tr>");
             out.println("<td>" + aluno.getMatricula() + "</td>");
             out.println("<td>" + aluno.getMatricula() + "</td>");
-            out.println("<td><a href='" + response.encodeURL("/atividade05/alterar?id=") + aluno.getId() + "'>Alterar</a>");
+            out.println("<a href='" + response.encodeURL("/aluno/excluir?id=") + aluno.getId() + "' onclick='return confirm('Deseja excluir o aluno?');'>Excluir</a></td>");
             out.println("<a href=''>Excluir</a></td>");
             out.println("</tr>");
         }
